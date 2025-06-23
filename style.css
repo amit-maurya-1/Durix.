@@ -167,13 +167,15 @@ span{
     display: block;
     justify-self: flex-start;
     transition: .3s ease-in-out;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .hero-content .btn{
     justify-self:  flex-end;
 }
 
-.btn:hover{
+.btn:hover, .btn:active{
     background: var(--black);
 }
 
@@ -238,6 +240,8 @@ span{
     text-align: center;
     line-height: 35px;
     transition: .3s ease-in-out;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .category-card .flex{
@@ -248,7 +252,7 @@ span{
 
 }
 
-.category-card:hover .simple-icon{
+.category-card:hover .simple-icon, .category-card:active .simple-icon{
     background: var(--golden-hour);
     transform: rotateZ(-50deg);
 }
@@ -294,7 +298,7 @@ span{
     margin-bottom: .7rem;
 }
 
-.simple-icon:hover{
+.simple-icon:hover, .simple-icon:active{
     scale: 1.15;
 }
 
@@ -367,7 +371,7 @@ small{
     width: 160px;
 }
 
-.product-card:hover .product-image .btn{
+.product-card:hover .product-image .btn, .product-card:active .product-image .btn{
        bottom: 50px;    
 }
 
@@ -588,7 +592,7 @@ small{
     transition: transform 0.3s ease;
 }
 
-.social-icons a:hover i {
+.social-icons a:hover i, .social-icons a:active i {
     transform: scale(1.3);
 }
 
@@ -615,6 +619,8 @@ small{
     margin-bottom: .7rem;
     font-weight: 300;
     position: relative;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .footer-link::after {
@@ -630,7 +636,7 @@ small{
     transition: transform 0.3s ease;
 }
 
-.footer-link:hover::after {
+.footer-link:hover::after, .footer-link:active::after {
     transform: scaleX(1);
 }
 
@@ -656,63 +662,175 @@ body {
     overflow-x: hidden;
 }
 
+/* RESPONSIVE DESIGN */
+/* [Previous CSS remains unchanged until the responsive section] */
 
-@media screen and (max-width:680px) {
-    .h1-heading{
-        font-size: 5rem;
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .navbar {
+        height: 10vh;
     }
-
-
-    .big-para{
+    .navlist {
+        width: 100%;
+        right: 0;
+        top: 80px;
+        padding: 1rem;
+        transform: translateX(100%);
+        transition: transform .3s ease-in-out;
+    }
+    .navlist-active {
+        transform: translateX(0);
+    }
+    .hero-section {
+        flex-direction: column;
+        height: auto;
+        padding-block: 2rem;
+        text-align: center;
+    }
+    .hero-content {
+        order: 1;
+    }
+    .hero-image {
+        order: 2;
+        width: 100%;
+        max-width: 20rem;
+    }
+    .hero-section::before {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 15rem;
+    }
+    .h1-heading {
+        font-size: clamp(4rem, 10vw, 5rem);
+    }
+    .big-para {
         font-size: 1.5rem;
     }
-
-    .hero-image{
-        width: 27rem;
+    .category-card {
+        flex-basis: 50%;
+        height: 25rem;
     }
-
-    .hero-section::before{
-        left: 0;
-        width: 18rem;
-        top: 100px;
+    .product-card {
+        flex-basis: 50%;
     }
-
-    .h2-heading{
-        font-size: 2.2rem;
+    .product-image {
+        height: 18rem;
     }
-
-    .bed-image{
-        width: 28rem;
+    .bed-image {
+        width: 80%;
     }
+    .about-image {
+        width: 25rem;
+        height: 30rem;
+        margin-left: 2rem;
+    }
+    .about-image::before {
+        width: 14rem;
+        height: 15rem;
+    }
+    .fix-section .h2-heading {
+        font-size: 3rem;
+    }
+    .footer-bg .flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-wrapper {
+        margin-bottom: 2rem;
+    }
+    .input-container {
+        width: 90%;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
 
-    .bed-detail{
+@media screen and (max-width: 480px) {
+    .wrapper {
+        padding-inline: 1rem;
+    }
+    .h1-heading {
+        font-size: clamp(3rem, 10vw, 3.5rem);
+    }
+    .big-para {
+        font-size: clamp(1.2rem, 4vw, 1.3rem);
+    }
+    .h2-heading {
+        font-size: clamp(1.8rem, 6vw, 2rem);
+    }
+    .h3-heading {
+        font-size: clamp(1.5rem, 5vw, 1.8rem);
+    }
+    .avg-para {
+        font-size: clamp(0.9rem, 4vw, 1rem);
+    }
+    .hero-image {
+        max-width: 18rem;
+    }
+    .hero-section::before {
+        width: 12rem;
+    }
+    .category-card, .product-card {
+        flex-basis: 100%;
+        height: 20rem;
+    }
+    .product-image {
+        height: 15rem;
+    }
+    .bed-image {
+        width: 100%;
+    }
+    .bed-detail {
         opacity: 0;
         visibility: hidden;
         transition: .3s ease-in-out;
     }
-
-    .bed-image:hover .bed-detail{
+    .bed-image:hover .bed-detail, .bed-image:active .bed-detail {
         opacity: 1;
         visibility: visible;
     }
-
-    .about-image{
-        width: 25rem;
+    .about-image {
+        width: 20rem;
         height: 25rem;
-        margin-left: 6rem;
+        margin-left: 1rem;
+    }
+    .fix-section .h2-heading {
+        font-size: 2.5rem;
     }
 
-    .about-image::before{
-        width: 14rem;
-        height: 15rem;
-    }
-
-    .fix-section .h2-heading{
-        font-size: 2.7rem;
+    /* Specific fixes for the image layout issue */
+    .product-card {
         width: 100%;
+        margin: 0 auto 1rem;
+        text-align: center;
     }
-
-    .avg-para{
-        font-size: .95rem;
+    .product-image {
+        margin: 0 auto;
+        max-width: 90%;
+    }
+    .product-image .btn {
+        bottom: 10px;
+        width: 120px;
+        font-size: 0.8rem;
+    }
+    .product-card:hover .product-image .btn, .product-card:active .product-image .btn {
+        bottom: 10px;
+    }
+    .about {
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .about .h2-heading {
+        max-width: 100%;
+        font-size: clamp(1.5rem, 6vw, 1.8rem);
+    }
+    .about-image {
+        margin: 1rem auto;
+        transform: rotateZ(0); /* Remove rotation for mobile */
+    }
+    .about-image::before {
+        display: none; /* Hide secondary image on very small screens */
     }
 }
