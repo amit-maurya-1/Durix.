@@ -722,37 +722,3 @@ body {
     }
 }
   
-    /* Specific fixes for the image layout issue */
-    .product-card {
-        width: 100%;
-        margin: 0 auto 1rem;
-        text-align: center;
-    }
-    .product-image {
-        margin: 0 auto;
-        max-width: 90%;
-    }
-    .product-image .btn {
-        bottom: 10px;
-        width: 120px;
-        font-size: 0.8rem;
-    }
-    .product-card:hover .product-image .btn, .product-card:active .product-image .btn {
-        bottom: 10px;
-    }
-    .about {
-        text-align: center;
-        margin-top: 1rem;
-    }
-    .about .h2-heading {
-        max-width: 100%;
-        font-size: clamp(1.5rem, 6vw, 1.8rem);
-    }
-    .about-image {
-        margin: 1rem auto;
-        transform: rotateZ(0); /* Remove rotation for mobile */
-    }
-    .about-image::before {
-        display: none; /* Hide secondary image on very small screens */
-    }
-}
