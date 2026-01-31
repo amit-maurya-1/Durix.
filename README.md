@@ -83,6 +83,10 @@ You've creatively used ::before pseudo-elements and backdrop-filter: blur() to e
 ⚙️ JavaScript DOM Manipulation
 
 
+# 🤝 Contributing
+
+Contributions are welcome!
+Feel free to fork the repository and submit a pull request.
 
 
 # 🤙Contact
